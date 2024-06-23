@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main() {
+    int regNos[] = {123, 456, 789, 1011, 1213};
+    int searchRegNo = 1011;
+    int found = 0;
+
+    for (int i = 0; i < 5; i++) {
+        if (regNos[i] == searchRegNo) {
+            found = 1;
+            break;
+        }
+    }
+
+    if (found == 1) {
+        printf("Registration number found in the array.");
+    } else {
+        printf("Registration number not found in the array.");
+    }
+
+    return 0;
+}
