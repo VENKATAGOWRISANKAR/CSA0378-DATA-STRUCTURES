@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+void displayMissingElement(int arr[], int size) {
+    int i, total, expectedTotal;
+    
+    total = (size + 1) * (size + 2) / 2;
+    for (i = 0; i < size; i++) {
+        total -= arr[i];
+    }
+    
+    printf("Missing element: %d\n", total);
+}
+
+int main() {
+    int arr[] = {1, 2, 4, 6, 3, 7, 8};
+    int size = sizeof(arr) / sizeof(arr[0]);
+    
+    displayMissingElement(arr, size);
+    
+    return 0;
+}
