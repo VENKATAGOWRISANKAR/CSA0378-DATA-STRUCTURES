@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Node {
+    int data;
+    struct Node* next;
+};
+
+struct Node* mergeLists(struct Node* list1, struct Node* list2) {
+    if (list1 == NULL) {
+        return list2;
+    }
+    if (list2 == NULL) {
+        return list1;
+    }
+
+    struct Node* mergedList;
+
+    if (list1->data < list2->data) {
+        mergedList = list1;
+        mergedList->next = mergeLists(list1->next, list2);
+    } else {
+        mergedList = list2;
+        mergedList->next = mergeLists(list1, list2->next);
+    }
+
+    return mergedList;
+}
